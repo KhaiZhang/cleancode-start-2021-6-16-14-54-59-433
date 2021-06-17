@@ -12,13 +12,13 @@ public class Order {
     public Order(int orderNumber, String buyerName, String buyerPhoneNumber, String buyerAddress) {
         this.orderNumber = orderNumber;
         this.setBuyerName(buyerName);
-        this.buyerPhoneNumber = buyerPhoneNumber;
+        this.setBuyerPhoneNumber(buyerPhoneNumber);
         this.buyerAddress = buyerAddress;
     }
 
     public String confirm(){
         return String.format("Please confirm buyer information: buyer name is %s, " +
-                "buyer phone number is %s and buyer address is %s.", getBuyerName(), buyerPhoneNumber, buyerAddress);
+                "buyer phone number is %s and buyer address is %s.", getBuyerName(), getBuyerPhoneNumber(), buyerAddress);
     }
 
     public String getBuyerName() {
@@ -27,6 +27,14 @@ public class Order {
 
     public void setBuyerName(String buyerName) {
         this.user = new User(buyerName);
+    }
+
+    public String getBuyerPhoneNumber() {
+        return this.user.getBuyerPhoneNumber();
+    }
+
+    public void setBuyerPhoneNumber(String buyerPhoneNumber) {
+        this.user.setBuyerPhoneNumber(buyerPhoneNumber);
     }
 }
 
