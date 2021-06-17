@@ -7,18 +7,26 @@ public class Order {
     private String buyerName;
     private String buyerPhoneNumber;
     private String buyerAddress;
+    private User user;
 
     public Order(int orderNumber, String buyerName, String buyerPhoneNumber, String buyerAddress) {
         this.orderNumber = orderNumber;
-
-        this.buyerName = buyerName;
+        this.setBuyerName(buyerName);
         this.buyerPhoneNumber = buyerPhoneNumber;
         this.buyerAddress = buyerAddress;
     }
 
     public String confirm(){
         return String.format("Please confirm buyer information: buyer name is %s, " +
-                "buyer phone number is %s and buyer address is %s.", buyerName, buyerPhoneNumber, buyerAddress);
+                "buyer phone number is %s and buyer address is %s.", getBuyerName(), buyerPhoneNumber, buyerAddress);
+    }
+
+    public String getBuyerName() {
+        return this.user.getName();
+    }
+
+    public void setBuyerName(String buyerName) {
+        this.user = new User(buyerName);
     }
 }
 
