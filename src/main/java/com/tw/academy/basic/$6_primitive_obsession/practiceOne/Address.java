@@ -18,4 +18,12 @@ public class Address {
   String getProvince() {
       return address.substring(0, address.indexOf("省"));
   }
+
+  boolean isSameCityWith(Address address) {
+      return this.getCity().equals(address.getCity());
+  }
+
+  boolean isSameProvinceWith(Address address) {
+      return this.getProvince().equals(address.getProvince());
+  }
 }
