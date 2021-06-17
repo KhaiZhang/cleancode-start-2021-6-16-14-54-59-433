@@ -32,4 +32,9 @@ public class User {
   public void setBuyerAddress(String buyerAddress) {
     this.buyerAddress = buyerAddress;
   }
+
+  public String confirm(){
+    return String.format("Please confirm buyer information: buyer name is %s, " +
+            "buyer phone number is %s and buyer address is %s.", getName(), getBuyerPhoneNumber(), getBuyerAddress());
+  }
 }
