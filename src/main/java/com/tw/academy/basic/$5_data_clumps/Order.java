@@ -4,9 +4,6 @@ public class Order {
 
     private int orderNumber;
 
-    private String buyerName;
-    private String buyerPhoneNumber;
-    private String buyerAddress;
     private User user;
 
     public Order(int orderNumber, String buyerName, String buyerPhoneNumber, String buyerAddress) {
