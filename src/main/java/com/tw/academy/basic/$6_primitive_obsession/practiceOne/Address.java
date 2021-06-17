@@ -1,13 +1,21 @@
 package com.tw.academy.basic.$6_primitive_obsession.practiceOne;
 
 public class Address {
-  private final String fromAddress;
+  private final String address;
 
-  public Address(String fromAddress) {
-    this.fromAddress = fromAddress;
+  public Address(String address) {
+    this.address = address;
   }
 
-  public String getFromAddress() {
-    return fromAddress;
+  public String getAddress() {
+    return address;
+  }
+
+  String getCity() {
+      return address.substring(address.indexOf("省") + 1, address.indexOf("市"));
+  }
+
+  String getProvince() {
+      return address.substring(0, address.indexOf("省"));
   }
 }
