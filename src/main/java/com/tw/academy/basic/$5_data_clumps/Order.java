@@ -6,39 +6,21 @@ public class Order {
 
     private User user;
 
-    public Order(int orderNumber, String buyerName, String buyerPhoneNumber, String buyerAddress) {
+    public Order(int orderNumber,User user) {
         this.orderNumber = orderNumber;
-        this.setBuyerName(buyerName);
-        this.setBuyerPhoneNumber(buyerPhoneNumber);
-        this.setBuyerAddress(buyerAddress);
+        this.setUser(user);
     }
 
     public String confirm(){
         return user.confirm();
     }
 
-    public String getBuyerName() {
-        return this.user.getName();
+    public User getUser() {
+        return user;
     }
 
-    public void setBuyerName(String buyerName) {
-        this.user = new User(buyerName);
-    }
-
-    public String getBuyerPhoneNumber() {
-        return this.user.getBuyerPhoneNumber();
-    }
-
-    public void setBuyerPhoneNumber(String buyerPhoneNumber) {
-        this.user.setBuyerPhoneNumber(buyerPhoneNumber);
-    }
-
-    public String getBuyerAddress() {
-        return this.user.getBuyerAddress();
-    }
-
-    public void setBuyerAddress(String buyerAddress) {
-        this.user.setBuyerAddress(buyerAddress);
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
